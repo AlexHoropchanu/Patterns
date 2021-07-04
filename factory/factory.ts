@@ -14,17 +14,17 @@ class Mercedess {
 }
 
 class CarFactory {
-  static list: object = {
+  private static list: object = {
     bmw: Bmw,
     toyota: Toyota,
     mercedess: Mercedess,
   };
 
-  create(model, type): object {
+  public create(model, type): object {
     const carClasses = CarFactory.list[type];
-    const cars = new carClasses(model);
-    cars.type = type;
-    return cars;
+    const car = new carClasses(model);
+    car.type = type;
+    return car;
   }
 }
 

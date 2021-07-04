@@ -27,9 +27,9 @@ var CarFactory = /** @class */ (function () {
     }
     CarFactory.prototype.create = function (model, type) {
         var carClasses = CarFactory.list[type];
-        var cars = new carClasses(model);
-        cars.type = type;
-        return cars;
+        var car = new carClasses(model);
+        car.type = type;
+        return car;
     };
     CarFactory.list = {
         bmw: Bmw,
