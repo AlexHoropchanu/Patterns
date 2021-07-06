@@ -8,7 +8,7 @@ class Cachee {
 	}
 }
 
-class ChairFactory {
+class CacheAdd {
 	cache: Array <Cachee> = []
 	getCacheType(type: string = 'image') {
 		for (var i = this.cache.length - 1; i >= 0; i--) {
@@ -23,7 +23,7 @@ class ChairFactory {
 	}
 }
 
-let factory = new ChairFactory
+let factory = new CacheAdd
 
 factory.getCacheType()
 factory.getCacheType('image')

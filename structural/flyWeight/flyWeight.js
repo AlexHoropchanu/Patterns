@@ -8,11 +8,11 @@ var Cachee = /** @class */ (function () {
     };
     return Cachee;
 }());
-var ChairFactory = /** @class */ (function () {
-    function ChairFactory() {
+var CacheAdd = /** @class */ (function () {
+    function CacheAdd() {
         this.cache = [];
     }
-    ChairFactory.prototype.getCacheType = function (type) {
+    CacheAdd.prototype.getCacheType = function (type) {
         if (type === void 0) { type = 'image'; }
         for (var i = this.cache.length - 1; i >= 0; i--) {
             if (this.cache[i].type == type) {
@@ -24,9 +24,9 @@ var ChairFactory = /** @class */ (function () {
         console.log('\nСоздание нового и добавление в кеш объекта.\n');
         this.cache.push(new Cachee(type));
     };
-    return ChairFactory;
+    return CacheAdd;
 }());
-var factory = new ChairFactory;
+var factory = new CacheAdd;
 factory.getCacheType();
 factory.getCacheType('image');
 factory.getCacheType('login');
