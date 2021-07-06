@@ -1,9 +1,9 @@
 class Access {
-	open() {
+	public open(){
 		console.log('Доступ открыт')
 	}
 
-	close() {
+	public close() {
 		console.log('Доступ закрыт')
 	}
 };
@@ -12,7 +12,7 @@ class SecuritySystem {
 	constructor(private login:Access) {
 	}
 
-	open(password: string) {
+	public open(password: string) {
 		if (this.authenticate(password)) {
 			this.login.open();
 		} else {
@@ -20,7 +20,7 @@ class SecuritySystem {
 		}
 	}
 
-	authenticate(password: string) {
+	private authenticate(password: string) {
 		return password === 'password';
 	}
 };

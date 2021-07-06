@@ -1,1 +1,22 @@
-<mxfile host="app.diagrams.net" modified="2021-07-04T08:22:03.261Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="ixjT6RrgzAou74IZ8U9l" version="14.8.4" type="device"><diagram id="RbPamPtnaqhEI18QSO-Z" name="Page-1">7Vjbbts4EP0aAe2DC10s2X6M5LR9SBfBusC2fSloiZHYUqRB0bHVr9+hSFo3O/GmdncLLBAEmqPhiJxzZkjaCZJy/06gTfGBZ5g6vpvtnWDp+H7oR/BfAbUBPE8DuSCZhjrAivzABnQNuiUZrnqOknMqyaYPppwxnMoehoTgu77bA6f9r25QjkfAKkV0jP5FMllodO7PWvw9Jnlhv+xFC/2mRNbZrKQqUMZ3HSi4dYJEcC71U7lPMFW5s3nR496eeHuYmMBMnjPg6xf8+Y99WlfFqs7dTVR/LFeTUEd5RHRrFvx+WyJmZixrm4ZqR0qKGFjxA2dyZd54YCNKcgbPKcwDCwAesZAEMnhjXki+ATQtCM3uUM23araVROl3a8UFF+QHhEXUxITXQhoxgIK6His1EmAXUIEr8Lm3KfAG0Ae07zneoUoaIOWUok1F1odllEjkhMVcSl4aJ5MbWA7en0y6d6ASSgDzEktRg4sdMDPsG/n7gbF3rZi8yGBFV0jWERkB54fYLcfwYGj+B5RHI8qhdioptqnk4pWjCjbw9PJjhkrwuXES37kBOQjCcsdPOj6TpnyMA9uWa1AAODRm121nltbzfO3MYme2HIkN0i0bEQj+HSecclDVknGtPkLpALICpPhBnpRftUEpzP6u8VlOW+RPk3MFcRj7QJsiLUiWYaakwyWSSOtELWXDCZMNJ2EMf7DKxH0TOuFSrTuMvdaGP+UuZNLkF5FGMhhEuMNKiOfp63TZjkVnRRadp7FoeiWJzUYSG3FMScOd5th2Vu9FBJdAFcUtox8V4cuJN2I9GLMeHGGYojWm97wiknAVX2jfAfP/FrmLMxvI/Erczo9wG6cUmHr1WtW37/L1N7UT/1/VFyZ+fh7xgX8l5u2RrEN9cfSwUMjSbuQX2EKj/g46nR0pAO9IHsJrbaD2BDvMQ6KK4MrJCPz/WjaCcbNvTg3DPGCW3ajzOFhrytURLgboLaE2O51E4QzO4GYoVFrBc84QvW3R87pDc1LVh8gm6p7IT6reoZC19dlUv3pe7rtG3TsCqvk8TRgslW9Fip8tn5PMTkwcgSmS5LH/vWOsmUj3qnO1YQ4XJ3sWWAyI1/M0o7rXhUGgw0XGBpoNAsERPcdyFAhIRnXHzXTWkxP2vPDod07Py72kPzzoGbcVcODmJ4pivEtamXQqAlR1p84a9oLS2Y86xfCM1NfmxmKkau7BJpRzuH2+ZD/SpX05xf5cn1n8fn0mCINOp5m4b1wverLdKOMeCwIpU1dpjTFIn44HJWlsFc+DcNZuwzVW3bWGAS/Z0+xPMk0veO7UeO3e5/n9VjKdv7D3+fPBLutfp/cFYb/HTqdP97LRvKa/oJdNx8e+37GXLX5JLwOz/UVPM9D+LBrc/g0=</diagram></mxfile>
+<mxfile>
+    <diagram id="RbPamPtnaqhEI18QSO-Z" name="Page-1">
+        <mxGraphModel dx="1118" dy="534" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="_ZeYNxcyshSyg0p6yTmS-5" value="Human" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="140" width="330" height="146" as="geometry"/>
+                </mxCell>
+                <mxCell id="_ZeYNxcyshSyg0p6yTmS-6" value="+name: string,&#10;-age: number, &#10;-weight: number" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_ZeYNxcyshSyg0p6yTmS-5" vertex="1">
+                    <mxGeometry y="26" width="330" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="_ZeYNxcyshSyg0p6yTmS-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="_ZeYNxcyshSyg0p6yTmS-5" vertex="1">
+                    <mxGeometry y="90" width="330" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="_ZeYNxcyshSyg0p6yTmS-8" value="+constructor(name: string, age: number, weight: number)&#10;+clone(): object" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_ZeYNxcyshSyg0p6yTmS-5" vertex="1">
+                    <mxGeometry y="98" width="330" height="48" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

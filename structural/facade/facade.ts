@@ -1,37 +1,33 @@
 class Сigaretes{
-    takePack() {
+    public takePack() {
         console.log("Взять пачку")
     }
-    openPack() {
+    public openPack() {
         console.log("Открыть пачку")
     }
-    takeSigaretes() {
+    public  takeSigaretes() {
         console.log("Взять сигарету")
     }
-    closePack() {
+    public  closePack() {
         console.log("Закрыть пачку")
     }
 }
 class Lighter{
-    takeLighter() {
+    public takeLighter() {
         console.log("Взять зажигалку")
     }
-    lightLighter() {
+    public  lightLighter() {
         console.log("Зажечь зажигалку")
     }
-    lightUp(){
+    public  lightUp(){
     console.log("Подкурить")
     }
-    putOutLighter() {
+    public  putOutLighter() {
         console.log("Потушить зажигалку")
     }
 }
 class SmokeFacade{
-    private сigaretes: Сigaretes;
-    private lighter: Lighter;
-    constructor(сigaretes: Сigaretes, lighter: Lighter) {
-        this.сigaretes = сigaretes
-        this.lighter = lighter
+    constructor(private сigaretes: Сigaretes, private lighter: Lighter) {
     }
     public smoked() {
         this.сigaretes.takePack()

@@ -29,7 +29,6 @@ var CoffeeDecorator = /** @class */ (function (_super) {
     }
     return CoffeeDecorator;
 }(Coffee));
-// ------------------------------ Beverages ------------------------------
 var Espresso = /** @class */ (function (_super) {
     __extends(Espresso, _super);
     function Espresso() {
@@ -42,19 +41,18 @@ var Espresso = /** @class */ (function (_super) {
     };
     return Espresso;
 }(Coffee));
-var HouseBlend = /** @class */ (function (_super) {
-    __extends(HouseBlend, _super);
-    function HouseBlend() {
+var Americano = /** @class */ (function (_super) {
+    __extends(Americano, _super);
+    function Americano() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.description = "House blend";
         return _this;
     }
-    HouseBlend.prototype.cost = function () {
+    Americano.prototype.cost = function () {
         return .99;
     };
-    return HouseBlend;
+    return Americano;
 }(Coffee));
-// ------------------------------ Condiments ------------------------------
 var Sugar = /** @class */ (function (_super) {
     __extends(Sugar, _super);
     function Sugar(beverage) {
@@ -85,7 +83,6 @@ var Milk = /** @class */ (function (_super) {
     };
     return Milk;
 }(CoffeeDecorator));
-// ------------------------------ Make our coffee! ------------------------------
 var coffee = new Espresso();
 coffee = new Sugar(coffee);
 coffee = new Milk(coffee);

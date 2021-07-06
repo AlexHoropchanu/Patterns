@@ -9,11 +9,11 @@ abstract class Coffee {
 }
 
 abstract class CoffeeDecorator extends Coffee {
-    decoratedCoffee: Coffee;
+    public decoratedCoffee: Coffee;
     public abstract getDescription(): string;
 }
 
-// ------------------------------ Beverages ------------------------------
+
 class Espresso extends Coffee {
     public description = "Espresso";
 

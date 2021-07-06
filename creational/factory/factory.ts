@@ -20,7 +20,7 @@ class CarFactory {
     mercedess: Mercedess,
   };
 
-  public create(model, type): object {
+  public create(model: string, type: string): object {
     const carClasses = CarFactory.list[type];
     const car = new carClasses(model);
     car.type = type;
