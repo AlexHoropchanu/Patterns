@@ -17,7 +17,7 @@ class AbstractCarFactory {
   }
 }
 
-// Concrete #1
+
 class ToyotaFactory extends AbstractCarFactory {
   createPremiumCar(model) {
     return new ToyotaPremiumCar(model);
@@ -37,7 +37,7 @@ class ToyotaSportCar extends AbstractSportCar {
     super(model);
   }
 }
-// Concrete #2
+
 class BmwFactory extends AbstractCarFactory {
   createPremiumCar(model) {
     return new BmwPremiumCar(model);
