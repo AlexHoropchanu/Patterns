@@ -3,7 +3,7 @@ class Cachee {
 	constructor(type: string = 'image') {
 		this.type = type
 	}
-	setWeight() {
+	setCache() {
 		console.log(`Создан кэш типа ${this.type}.`)
 	}
 }
