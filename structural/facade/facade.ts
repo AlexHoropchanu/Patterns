@@ -40,7 +40,6 @@ class SmokeFacade{
     }
     public stopSmoked() {
         this.сigaretes.closePack()
-        this.lighter.putOutLighter()
     }
 }
 let cigaretes = new Сigaretes();

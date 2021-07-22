@@ -1,35 +1,53 @@
-class Bmw {
-  constructor(private model: string, private cost: number = 50) {
-  }
+
+abstract class CarCreator {
+
+    public abstract carFactoryMethod(): Product;
+
+    public createProduct(): string {
+        const product = this.carFactoryMethod();
+        return `Работаем с полученым продуктом ${product.start()}`;
+    }
 }
 
-class Toyota {
-   constructor(private model: string, private cost: number = 100) {
-  }
+
+class BmwCreator extends CarCreator {
+
+    public carFactoryMethod(): Product {
+        return new Bmw();
+    }
 }
 
-class Mercedess {
-   constructor(private model: string, private cost: number = 150) {
-  }
+class ToyotaCreator extends CarCreator {
+    public carFactoryMethod(): Product {
+        return new Toyota();
+    }
 }
 
-class CarFactory {
-  private static list: object = {
-    bmw: Bmw,
-    toyota: Toyota,
-    mercedess: Mercedess,
-  };
-
-  public create(model: string, type: string): object {
-    const carClasses = CarFactory.list[type];
-    const car = new carClasses(model);
-    car.type = type;
-    return car;
-  }
+interface Product {
+    start(): string;
 }
 
-const factory = new CarFactory();
 
-const bmw =  console.log(factory.create("X5", "bmw"))
-const toyota =  console.log(factory.create("Camry", "toyota"))
-const mercedess =  console.log(factory.create("S600", "mercedess"))
+class Bmw implements Product {
+    public start(): string {
+        return 'Ваша Bmw запустилась';
+    }
+}
+
+class Toyota implements Product {
+    public start(): string {
+        return 'Ваша Toyota запустилась';
+    }
+}
+
+
+function client(creator: CarCreator) {
+    console.log(creator.carFactoryMethod());
+}
+
+console.log('Начинаем изготавливать Bmw');
+client(new BmwCreator());
+
+
+console.log('Начинаем изготавливать Toyota');
+client(new ToyotaCreator());

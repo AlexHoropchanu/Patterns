@@ -48,7 +48,6 @@ var SmokeFacade = /** @class */ (function () {
     };
     SmokeFacade.prototype.stopSmoked = function () {
         this.сigaretes.closePack();
-        this.lighter.putOutLighter();
     };
     return SmokeFacade;
 }());
