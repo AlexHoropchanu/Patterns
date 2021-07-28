@@ -47,4 +47,3 @@ let lighter = new Lighter();
 let smoke = new SmokeFacade(cigaretes, lighter);
 console.log(smoke.smoked())
 console.log(smoke.stopSmoked())
-//
