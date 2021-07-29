@@ -30,7 +30,6 @@ class PastaBuilder {
 
 	addChees(): PastaBuilder {
 		this.pasta.chees = true
-
 		return this
 	}
 

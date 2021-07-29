@@ -43,3 +43,4 @@ var colorCar1 = new ColorCar(100, 'bmw', 'red');
 var colorCar2 = colorCar1.clone();
 console.log(colorCar1, colorCar2);
 console.log(colorCar1 === colorCar2);
+//# sourceMappingURL=prototype.js.map
