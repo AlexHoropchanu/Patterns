@@ -26,4 +26,4 @@ class SecuritySystem {
 };
 const a = new SecuritySystem(new Access())
 a.open('password')
-a.open('pasword')
+a.open('pasword')//
