@@ -26,10 +26,10 @@ var Editor = /** @class */ (function () {
     return Editor;
 }());
 var editor = new Editor();
-editor.type('1- sdfij;dfkgh;lskghskdgl;dfhsj');
-editor.type('2- sdfjkghsdfjkghssu');
+editor.type('снимок 1');
+editor.type('снимок 2');
 var saved = editor.save();
-editor.type('3- sdfghso;eihgw3489tyw34789t5he49p78ty25-');
+editor.type('снимок 3');
 console.log(editor.getContent());
 editor.restore(saved);
 console.log(editor.getContent());

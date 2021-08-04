@@ -11,13 +11,11 @@ var myIterator = /** @class */ (function () {
             this.position++;
             return {
                 value: this.array[currentPosition],
-                done: done
             };
         }
         else {
             return {
                 value: null,
-                done: done
             };
         }
     };
@@ -31,5 +29,5 @@ var array = [5, 'seven', 'Marc', 'Hello', 134, 0.6];
 var newIterator = new myIterator(array);
 console.log(newIterator.next());
 console.log(newIterator.next());
-console.log(newIterator.rewind());
+newIterator.rewind();
 //# sourceMappingURL=iterator.js.map

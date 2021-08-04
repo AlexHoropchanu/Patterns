@@ -1,34 +1,38 @@
-var Access = /** @class */ (function () {
-    function Access() {
+var User = /** @class */ (function () {
+    function User(name, password) {
+        this.name = name;
+        this.password = password;
+        this.name = name;
+        this.password = password;
     }
-    Access.prototype.open = function () {
-        return 'Доступ открыт';
+    User.prototype.getPage = function () {
+        return "Ваша страница открыта";
     };
-    Access.prototype.close = function () {
-        return 'Доступ закрыт';
+    User.prototype.leavePage = function () {
+        console.log("Выход со страници");
     };
-    return Access;
+    return User;
 }());
-;
-var SecuritySystem = /** @class */ (function () {
-    function SecuritySystem(access) {
-        this.access = access;
+var ContentSecurity = /** @class */ (function () {
+    function ContentSecurity(user) {
+        this.user = user;
+        this.user = user;
     }
-    SecuritySystem.prototype.open = function (password) {
-        if (this.authenticate(password)) {
-            console.log(this.access.open());
+    ContentSecurity.prototype.getPage = function () {
+        if (this.user.password === "password") {
+            this.user.getPage();
         }
         else {
-            console.log(this.access.close());
+            return "error";
         }
     };
-    SecuritySystem.prototype.authenticate = function (password) {
-        return password === 'password';
+    ContentSecurity.prototype.leavePage = function () {
+        this.user.leavePage();
     };
-    return SecuritySystem;
+    return ContentSecurity;
 }());
-;
-var a = new SecuritySystem(new Access());
-a.open('password');
-a.open('pasword');
+var alex = new ContentSecurity(new User("Alex", "password"));
+var max = new ContentSecurity(new User("Max", "pasword"));
+alex.getPage();
+max.getPage();
 //# sourceMappingURL=proxy.js.map

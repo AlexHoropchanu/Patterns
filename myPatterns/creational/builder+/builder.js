@@ -25,7 +25,6 @@ var PastaBuilder = /** @class */ (function () {
     };
     PastaBuilder.prototype.addChees = function () {
         this.pasta.chees = true;
-        console.log(this);
         return this;
     };
     PastaBuilder.prototype.build = function () {

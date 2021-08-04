@@ -1,29 +1,38 @@
-class Access {
-	public open(): string{
-		return 'Доступ открыт'
-	}
+class User {
+    constructor(public name: string, public password: string) {
+        this.name = name
+        this.password = password
+    }
 
-	public close(): string {
-		return 'Доступ закрыт'
-	}
-};
+    getPage(): string {
+        return "Ваша страница открыта";
+    }
 
-class SecuritySystem {
-	constructor(private access:Access) {
-	}
+    leavePage(): void {
+        console.log("Выход со страници");
+    }
+}
 
-	public open(password: string): void {
-		if (this.authenticate(password)) {
-			console.log(this.access.open());
-		} else {
-		    console.log(this.access.close());
-		}
-	}
+class ContentSecurity {
+    constructor(public user: User) {
+        this.user = user
+    }
 
-	private authenticate(password: string): boolean {
-		return password === 'password';
-	}
-};
-const a = new SecuritySystem(new Access())
-a.open('password')
-a.open('pasword')//
+    getPage(): string {
+        if (this.user.password === "password") {
+            this.user.getPage();
+        } else {
+            return "error";
+        }
+    }
+
+    leavePage() {
+        this.user.leavePage()
+    }
+}
+
+const alex = new ContentSecurity(new User("Alex", "password"))
+const max = new ContentSecurity(new User("Max", "pasword"))
+
+alex.getPage()
+max.getPage()

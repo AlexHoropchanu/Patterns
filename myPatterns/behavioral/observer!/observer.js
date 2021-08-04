@@ -2,11 +2,11 @@ var WeatherStation = /** @class */ (function () {
     function WeatherStation() {
         this.observers = [];
     }
-    WeatherStation.prototype.registerObserver = function (o) {
-        this.observers.push(o);
+    WeatherStation.prototype.registerObserver = function (observer) {
+        this.observers.push(observer);
     };
-    WeatherStation.prototype.removeObserver = function (o) {
-        var index = this.observers.indexOf(o);
+    WeatherStation.prototype.removeObserver = function (observer) {
+        var index = this.observers.indexOf(observer);
         this.observers.splice(index, 1);
     };
     WeatherStation.prototype.notifyObservers = function () {
@@ -16,7 +16,7 @@ var WeatherStation = /** @class */ (function () {
         }
     };
     WeatherStation.prototype.setTemperature = function (temp) {
-        console.log('WeatherStation: new temperature measurement: ' + temp);
+        console.log('Установка температуры ' + temp);
         this.temperature = temp;
         this.notifyObservers();
     };
@@ -28,28 +28,28 @@ var TemperatureDisplay = /** @class */ (function () {
         weatherStation.registerObserver(this);
     }
     TemperatureDisplay.prototype.update = function (temperature) {
-        console.log('TemperatureDisplay: I need to update my display');
+        console.log('обновление температуры на дисплее');
     };
     return TemperatureDisplay;
 }());
-var Fan = /** @class */ (function () {
-    function Fan(weatherStation) {
+var Climat = /** @class */ (function () {
+    function Climat(weatherStation) {
         this.subject = weatherStation;
         weatherStation.registerObserver(this);
     }
-    Fan.prototype.update = function (temperature) {
+    Climat.prototype.update = function (temperature) {
         if (temperature > 25) {
-            console.log('Fan: Its hot here, turning myself on...');
+            console.log('Температура более 25 включаю кондиционре');
         }
         else {
-            console.log('Fan: Its nice and cool, turning myself off...');
+            console.log('Температура менее 25 выключаю кондиционер');
         }
     };
-    return Fan;
+    return Climat;
 }());
 var weatherStation = new WeatherStation();
 var tempDisplay = new TemperatureDisplay(weatherStation);
-var fan = new Fan(weatherStation);
+var climat = new Climat(weatherStation);
 weatherStation.setTemperature(20);
 weatherStation.setTemperature(30);
 //# sourceMappingURL=observer.js.map

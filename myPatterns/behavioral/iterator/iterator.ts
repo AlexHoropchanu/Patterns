@@ -7,24 +7,22 @@ class myIterator {
         this.position = 0
     }
 
-    next() {
+    next(): any {
         let done = this.position >= this.array.length
         if (!done) {
             const currentPosition = this.position
             this.position++
             return {
                 value: this.array[currentPosition],
-                done
             }
         } else {
             return {
                 value: null,
-                done
             }
         }
     }
 
-    rewind() {
+    rewind(): void {
         this.position = 0
         console.log(this.position)
     }
@@ -37,4 +35,4 @@ let newIterator = new myIterator(array)
 
 console.log(newIterator.next())
 console.log(newIterator.next())
-console.log(newIterator.rewind())
+newIterator.rewind()
