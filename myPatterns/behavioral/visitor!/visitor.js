@@ -1,55 +1,38 @@
-var Monkey = /** @class */ (function () {
-    function Monkey() {
+var Iphone = /** @class */ (function () {
+    function Iphone() {
     }
-    Monkey.prototype.speak = function () {
-        console.log('ya-a-a');
+    Iphone.prototype.call = function () {
+        console.log('Функция звонить');
     };
-    Monkey.prototype.accept = function (operation) {
-        operation.visitMonkey(this);
+    Iphone.prototype.accept = function (operation) {
+        operation.visitIphone(this);
     };
-    return Monkey;
+    return Iphone;
 }());
-var Lion = /** @class */ (function () {
-    function Lion() {
+var Samsung = /** @class */ (function () {
+    function Samsung() {
     }
-    Lion.prototype.speak = function () {
-        console.log('argh');
+    Samsung.prototype.call = function () {
+        console.log('Функция звонить');
     };
-    Lion.prototype.accept = function (operation) {
-        operation.visitLion(this);
+    Samsung.prototype.accept = function (operation) {
+        operation.visitSamsung(this);
     };
-    return Lion;
+    return Samsung;
 }());
-var Dolphin = /** @class */ (function () {
-    function Dolphin() {
+var Call = /** @class */ (function () {
+    function Call() {
     }
-    Dolphin.prototype.speak = function () {
-        console.log('chick-chirick');
+    Call.prototype.visitIphone = function (iphone) {
+        iphone.call();
     };
-    Dolphin.prototype.accept = function (operation) {
-        operation.visitDolphin(this);
+    Call.prototype.visitSamsung = function (samsung) {
+        samsung.call();
     };
-    return Dolphin;
+    return Call;
 }());
-var Speak = /** @class */ (function () {
-    function Speak() {
-    }
-    Speak.prototype.visitMonkey = function (monkey) {
-        monkey.speak();
-    };
-    Speak.prototype.visitLion = function (lion) {
-        lion.speak();
-    };
-    Speak.prototype.visitDolphin = function (dolphin) {
-        dolphin.speak();
-    };
-    return Speak;
-}());
-var monkey = new Monkey();
-var lion = new Lion();
-var dolphin = new Dolphin();
-var speak = new Speak();
-monkey.accept(speak);
-lion.accept(speak);
-dolphin.accept(speak);
-//# sourceMappingURL=visitor.js.map
+var iphone = new Iphone();
+var samsung = new Samsung();
+var call = new Call();
+iphone.accept(call);
+samsung.accept(call);

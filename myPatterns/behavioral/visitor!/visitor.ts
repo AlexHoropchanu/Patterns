@@ -1,63 +1,49 @@
-interface Animal {
-	accept(operation:AnimalOperation)
+interface Phone {
+	accept(operation:PhoneOperation): void
 }
 
-class Monkey implements Animal {
-	speak():void {
-		console.log('ya-a-a')
+class Iphone implements Phone {
+	call():void {
+		console.log('Функция звонить')
 	}
 
-	accept(operation:AnimalOperation):void {
-		operation.visitMonkey(this)
-	}
-}
-
-class Lion implements Animal {
-	speak():void {
-		console.log('argh')
-	}
-
-	accept(operation:AnimalOperation):void {
-		operation.visitLion(this)
+	accept(operation:PhoneOperation):void {
+		operation.visitIphone(this)
 	}
 }
 
-class Dolphin implements Animal {
-	speak():void {
-		console.log('chick-chirick')
+class Samsung implements Phone {
+	call():void {
+		console.log('Функция звонить')
 	}
 
-	accept(operation:AnimalOperation):void {
-		operation.visitDolphin(this)
-	}
-}
-
-interface AnimalOperation {
-	visitMonkey(monkey:Monkey)
-	visitLion(lion:Lion)
-	visitDolphin(dolphin:Dolphin)
-}
-
-class Speak implements AnimalOperation {
-	visitMonkey(monkey:Monkey) {
-		monkey.speak()
-	}
-
-	visitLion(lion:Lion) {
-		lion.speak()
-	}
-
-	visitDolphin(dolphin:Dolphin) {
-		dolphin.speak()
+	accept(operation:PhoneOperation):void {
+		operation.visitSamsung(this)
 	}
 }
 
-let monkey = new Monkey()
-let lion = new Lion()
-let dolphin = new Dolphin()
 
-let speak = new Speak()
+interface PhoneOperation {
+	visitIphone(iphone: Iphone): void
+	visitSamsung(samsung:Samsung): void
+}
 
-monkey.accept(speak)
-lion.accept(speak)
-dolphin.accept(speak)
+class Call implements PhoneOperation {
+	visitIphone(iphone: Iphone): void {
+		iphone.call()
+	}
+
+	visitSamsung(samsung:Samsung): void {
+		samsung.call()
+	}
+
+}
+
+let iphone = new Iphone()
+let samsung = new Samsung()
+
+
+let call = new Call()
+
+iphone.accept(call)
+samsung.accept(call)

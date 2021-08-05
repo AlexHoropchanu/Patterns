@@ -1,5 +1,3 @@
-/**поведенческий паттерн проектирования, который позволяет передавать запросы последовательно по цепочке обработчиков. Каждый последующий обработчик решает, может ли он обработать запрос сам и стоит ли передавать запрос дальше по цепи */
-
 interface IDrink {
     whatElse(drink: IDrink): IDrink;
     ask(question: string): string;
@@ -50,4 +48,3 @@ for (const drink of drinks) {
     const answer = wine.ask(drink);
     console.log(`${answer}`);
 }
-

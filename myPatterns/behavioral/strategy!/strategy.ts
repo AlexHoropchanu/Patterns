@@ -17,7 +17,7 @@ class Substract implements Strategy {
 class Context {
 	private strategy:Strategy
 
-	constructor(strategy:Strategy= new Add()) {
+	constructor(strategy:Strategy) {
 		this.strategy = strategy
 	}
 
@@ -30,6 +30,6 @@ class Context {
 	}
 }
 
-let context = new Context()
+let context = new Context(new Add)
 
 console.log(context.execute(15, 23))

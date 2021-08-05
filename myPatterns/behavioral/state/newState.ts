@@ -41,19 +41,19 @@ abstract class State {
 
 class LockedState extends State {
     turnOn(): void {
-        console.log("Включение ноутбука")
         if (this.power) {
             this.laptop.changeState(new ChargedState(this.laptop))
+            this.laptop.charge()
             console.log('Ноутбук включен')
         } else {
-            console.log('Ноутбук разряжен')
+            console.log('Зарядите ноутбук')
         }
     }
-    turnOff(): void {}
+    turnOff(): void { }
     charge(): void {
+        console.log('Зарядка подключена')
         this.power = true
         this.screenOn = true
-        // console.log('Ноутбук заряжается')
     }
 }
 
@@ -62,7 +62,7 @@ class ChargedState extends State {
         this.screenOn = true
     }
     turnOff(): void {
-        if (this.screenOn && this.turnOn) {
+        if (this.screenOn) {
             this.laptop.changeState(new LockedState(this.laptop))
             this.power = false
             this.screenOn = false
@@ -79,8 +79,11 @@ class ChargedState extends State {
 
 const laptop = new Laptop()
 
+
 laptop.turnOn();
 
 laptop.charge();
 laptop.turnOn();
+
+
 laptop.turnOff()

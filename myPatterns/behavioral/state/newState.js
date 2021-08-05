@@ -45,20 +45,20 @@ var LockedState = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LockedState.prototype.turnOn = function () {
-        console.log("Включение ноутбука");
         if (this.power) {
             this.laptop.changeState(new ChargedState(this.laptop));
+            this.laptop.charge();
             console.log('Ноутбук включен');
         }
         else {
-            console.log('Ноутбук разряжен');
+            console.log('Зарядите ноутбук');
         }
     };
     LockedState.prototype.turnOff = function () { };
     LockedState.prototype.charge = function () {
+        console.log('зарядка подключена');
         this.power = true;
         this.screenOn = true;
-        // console.log('Ноутбук заряжается')
     };
     return LockedState;
 }(State));
@@ -71,7 +71,7 @@ var ChargedState = /** @class */ (function (_super) {
         this.screenOn = true;
     };
     ChargedState.prototype.turnOff = function () {
-        if (this.screenOn && this.turnOn) {
+        if (this.screenOn) {
             this.laptop.changeState(new LockedState(this.laptop));
             this.power = false;
             this.screenOn = false;
